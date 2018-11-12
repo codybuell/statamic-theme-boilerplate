@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+// Screen (top level stylesheet for screen based rendering)                   //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+// normalization / resets / etc
+@import "~tailwindcss/preflight";
+
+// components (aggregations of classes / site component styles)
+@import "~tailwindcss/components";
+@import "components/header";
+@import "components/content";
+@import "components/footer";
+// [ add custom components here ]
+
+// utilities (handy classes)
+@import "~tailwindcss/utilities";
+// [ add custom utilities here ]
+
+// defaults (classless elements)
+@import "defaults/base";

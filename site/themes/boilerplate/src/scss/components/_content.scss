@@ -1,0 +1,8 @@
+#content {
+
+    @apply .w-full .flex .flex-wrap .justify-between;
+
+    min-height: calc(100vh - 180px);
+    margin-top: 90px;
+
+}

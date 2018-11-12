@@ -1,0 +1,47 @@
+<header id="header" :class="sizeClass">
+  <nav id="nav" class="container">
+
+    <div id="nav-logo" style="fill: {{ site_settings:logo_fill_color }}">
+      {{ site_settings:menu_logo | output }}
+    </div>
+
+    <div id="nav-button">
+      <button @click="toggle" style="color: {{ site_settings:hamburger_fill_color }}">
+        {{ site_settings:menu_hamburger | output }}
+      </button>
+    </div>
+
+    <div id="nav-items">
+      {{ site_settings:nav_menu }}
+        {{ if type == "dropdown" }}
+          <nav-dropdown>
+            <span slot="link">{{ dropdown_text }}</span>
+            <div slot="dropdown" class="dropdown-menu">
+            {{ submenu }}
+              <a href="{{ url }}" class="dropdown-item">{{ link_text }}</a>
+            {{ /submenu }}
+            </div>
+          </nav-dropdown>
+        {{ elseif type == "link" }}
+          <div class="nav-item">
+            <a href="{{ url }}">{{ link_text }}</a>
+          </div>
+        {{ /if }}
+      {{ /site_settings:nav_menu }}
+    </div>
+
+    <div id="nav-items-small" :class="open ? 'block': 'hidden'" class="mt-5 w-full">
+      {{ site_settings:nav_menu }}
+        {{ if type == "dropdown" }}
+          <div class="mt-4 mb-2" style="border-bottom: 1px solid #333">{{ dropdown_text }}</div>
+          {{ submenu }}
+          <div class="block"><a href="{{ url }}" class="dropdown-item">{{ link_text }}</a></div>
+          {{ /submenu }}
+        {{ elseif type == "link" }}
+          <div class="mt-4 mb-2"><a href="{{ url }}">{{ link_text }}</a></div>
+        {{ /if }}
+      {{ /site_settings:nav_menu }}
+    </div>
+
+  </nav>
+</header>

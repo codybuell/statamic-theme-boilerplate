@@ -1,0 +1,70 @@
+#header {
+    @apply .fixed .pin-t .w-full .flex .flex-wrap .items-center .justify-between .bg-white .shadow-md .text-sm;
+    transition: .7s all;
+    -moz-transition: .7s all;
+    -webkit-transition: .7s all;
+    -o-transition: .7s all;
+    &.small {
+        padding: 15px 0;
+    }
+    &.large {
+        padding: 30px 0;
+    }
+    #nav {
+        @apply .flex .flex-wrap .items-center .justify-between .text-black;
+        min-width: 500px;
+        margin: 0 auto;
+        #nav-logo {
+            @apply .flex .items-center .flex-no-shrink;
+            margin: -5px 10px 0 0;
+        }
+        #nav-button {
+            @apply .block;
+            button {
+                @apply .flex .items-center .px-3 .py-2 .border .rounded .border-black;
+            }
+        }
+        #nav-items {
+            @apply .w-full .flex-grow .uppercase .justify-end .hidden;
+            .dropdown-wrapper {
+                @apply relative ml-5;
+                .dropdown-name {
+                    @apply .inline-block .select-none .flex .items-center;
+                    padding: 10px 0 10px 20px;
+                    &:hover {
+                        @apply .text-blue-darker;
+                    }
+                    .dropdown-arrow {
+                        @apply .ml-1 .h-4 .w-4;
+                    }
+                }
+                .dropdown-menu-wrapper {
+                    @apply .absolute .pin-r;
+                    .dropdown-menu {
+                        @apply .bg-grey .shadow .rounded .border .overflow-hidden .text-right;
+                        .dropdown-item {
+                            @apply .no-underline .block .pl-10 .pr-5 .py-3 .border-b .text-grey-darkest .bg-white .whitespace-no-wrap;
+                            &:hover {
+                                @apply .text-white .bg-grey-darkest;
+                            }
+                        }
+                    }
+                }
+            }
+            .nav-item {
+                @apply .relative .ml-5;
+                a {
+                    padding: 10px 0px 10px 20px;
+                }
+            }
+        }
+        @screen lg {
+            #nav-button {
+                @apply .hidden;
+            }
+            #nav-items {
+                @apply .flex .items-center .w-auto;
+            }
+        }
+    }
+}

@@ -26,3 +26,6 @@ Expected Globals
 
 - Site Name: `site_name`, text
 - Navigation Menu: `navigation_menu`, replicator (see example in repository)
+
+Layout
+------
